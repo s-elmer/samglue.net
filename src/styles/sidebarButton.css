@@ -1,0 +1,11 @@
+div.sidebarButton {
+    color: #A27353;
+}
+
+div.sidebarButton :hover {
+    background-color: #A1CD60;
+}
+
+div.sidebarButton :active {
+    background-color: #A1CD60;
+}

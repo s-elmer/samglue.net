@@ -1,0 +1,12 @@
+div.sidebar {
+  margin: 0;
+  width: 200px;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+div.content {
+    margin-left: 200px;
+    margin-top: 0px;
+}
