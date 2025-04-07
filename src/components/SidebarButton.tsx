@@ -1,18 +1,21 @@
 import "../styles/sidebarButton.css";
 import { Link } from "@tanstack/react-router";
+import gluestick from "../assets/images/gluestick.png";
 
 interface SidebarButtonProps {
-  className?: string;
   linkTo?: string;
   text?: string;
 }
 
-export const SidebarButton = ({ className, linkTo, text }: SidebarButtonProps) => {
+export const SidebarButton = ({ linkTo, text }: SidebarButtonProps) => {
   return (
-    <div className={"sidebarButton " + className}>
-      <Link to={linkTo} className="">
-        {text}
-      </Link>
+    <div className={"sidebarButton"}>
+      <img src={gluestick} height={"50px"} />
+      <div className={"sidebarButtonText"}>
+        <Link to={linkTo} className="sidebarLink">
+          {text}
+        </Link>
+      </div>
     </div>
   );
 };

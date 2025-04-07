@@ -1,15 +1,12 @@
-import { SidebarHeader } from "./SidebarHeader";
 import { SidebarButton } from "./SidebarButton";
 
 export const Sidebar = () => {
   return (
     <>
       <div className="sidebar">
-        <SidebarHeader />
-        <SidebarButton linkTo="/" text="Home" className="active" />
-        <br />
+        <SidebarButton linkTo="/" text="Home" />
         <SidebarButton linkTo="/about" text="About" />
-        <br />
+        <SidebarButton linkTo="/resume" text="Résumé" />
       </div>
     </>
   );

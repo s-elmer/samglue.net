@@ -1,11 +1,23 @@
 div.sidebarButton {
     color: #A27353;
+    position: relative;
 }
 
-div.sidebarButton :hover {
-    background-color: #A1CD60;
+div.sidebarButton:hover {
+    animation:ease-in-out
 }
 
-div.sidebarButton :active {
-    background-color: #A1CD60;
+div.sidebarButtonText {
+    position: absolute;
+    left: 30%;
+    top: 25%;
 }
+
+.sidebarLink {
+    font-family: 'Segoe Print';
+    font-weight: bold;
+    border-radius: 4px;
+    text-decoration: none;
+    color: white;
+}
+
