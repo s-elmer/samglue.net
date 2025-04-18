@@ -7,6 +7,7 @@ export const Sidebar = () => {
         <SidebarButton linkTo="/" text="Home" />
         <SidebarButton linkTo="/about" text="About" />
         <SidebarButton linkTo="/resume" text="Résumé" />
+        <SidebarButton linkTo="/favorites" text="Favorites" />
       </div>
     </>
   );

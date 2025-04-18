@@ -1,0 +1,10 @@
+div.card {
+  background-color: #313daa;
+  box-shadow: 5px 5px 20px black;
+  border-radius: 10px;
+  padding: 4px 4px 4px 4px;
+}
+
+div.card-content {
+  background-color: #f2ebfd;
+}

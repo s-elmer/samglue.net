@@ -12,6 +12,7 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as ResumeImport } from './routes/resume'
+import { Route as FavoritesImport } from './routes/favorites'
 import { Route as AboutImport } from './routes/about'
 import { Route as IndexImport } from './routes/index'
 
@@ -20,6 +21,12 @@ import { Route as IndexImport } from './routes/index'
 const ResumeRoute = ResumeImport.update({
   id: '/resume',
   path: '/resume',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const FavoritesRoute = FavoritesImport.update({
+  id: '/favorites',
+  path: '/favorites',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -53,6 +60,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutImport
       parentRoute: typeof rootRoute
     }
+    '/favorites': {
+      id: '/favorites'
+      path: '/favorites'
+      fullPath: '/favorites'
+      preLoaderRoute: typeof FavoritesImport
+      parentRoute: typeof rootRoute
+    }
     '/resume': {
       id: '/resume'
       path: '/resume'
@@ -68,12 +82,14 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/favorites': typeof FavoritesRoute
   '/resume': typeof ResumeRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/favorites': typeof FavoritesRoute
   '/resume': typeof ResumeRoute
 }
 
@@ -81,27 +97,30 @@ export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/favorites': typeof FavoritesRoute
   '/resume': typeof ResumeRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/resume'
+  fullPaths: '/' | '/about' | '/favorites' | '/resume'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/resume'
-  id: '__root__' | '/' | '/about' | '/resume'
+  to: '/' | '/about' | '/favorites' | '/resume'
+  id: '__root__' | '/' | '/about' | '/favorites' | '/resume'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  FavoritesRoute: typeof FavoritesRoute
   ResumeRoute: typeof ResumeRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  FavoritesRoute: FavoritesRoute,
   ResumeRoute: ResumeRoute,
 }
 
@@ -117,6 +136,7 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/about",
+        "/favorites",
         "/resume"
       ]
     },
@@ -125,6 +145,9 @@ export const routeTree = rootRoute
     },
     "/about": {
       "filePath": "about.tsx"
+    },
+    "/favorites": {
+      "filePath": "favorites.tsx"
     },
     "/resume": {
       "filePath": "resume.tsx"

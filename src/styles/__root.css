@@ -7,8 +7,9 @@ div.sidebar {
 }
 
 div.content {
-    margin-left: 200px;
-    margin-top: 0px;
+  margin-left: 200px;
+  margin-top: 0px;
+  margin-right: 625px;
 }
 
 body {
